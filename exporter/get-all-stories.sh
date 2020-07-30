@@ -12,7 +12,7 @@ GET_STORY_URL=https://api.clubhouse.io/api/v3/stories
 
 echo > data/stories.json
 
-echo "Getting all bugs..."
+echo "Getting details for all Bug Stories..."
 cat data/stories.bugs.json | jq -c '.[].id' | while read id; do
   curl -X GET \
     -H "Content-Type: application/json" \
@@ -21,7 +21,7 @@ cat data/stories.bugs.json | jq -c '.[].id' | while read id; do
   echo >> data/stories.json
 done
 
-echo "Getting all chores..."
+echo "Getting details for all Chore Stories..."
 cat data/stories.chores.json | jq -c '.[].id' | while read id; do
   curl -X GET \
     -H "Content-Type: application/json" \
@@ -30,7 +30,7 @@ cat data/stories.chores.json | jq -c '.[].id' | while read id; do
   echo >> data/stories.json
 done
 
-echo "Getting all features..."
+echo "Getting details for all Feature Stories..."
 cat data/stories.features.json | jq -c '.[].id' | while read id; do
   curl -X GET \
     -H "Content-Type: application/json" \
@@ -40,6 +40,6 @@ cat data/stories.features.json | jq -c '.[].id' | while read id; do
 done
 
 num=$(cat data/stories.json | wc -l)
-echo "Got $num"
+echo "Got details for $num stories"
 
 echo "Done!"
