@@ -18,7 +18,22 @@ The container is configured by a number of environment variables: -
 *   `AWS_ACCESS_KEY_ID` The AWS Access Key with permission to write to the bucket
 *   `AWS_SECRET_ACCESS_KEY` teh AWS secret key
 
-You can run the container locally to quickly archive your Clubhouse data..
+## Building
+The container image is built using Travis. Inspect the project's `.travis.yml`
+to see how the container image is built. The simplest thing to do is
+to run the Docker build command: -
+
+    $ docker build -t informaticsmatters/clubhouse-exporter:latest .
+
+## Execution
+You can run the container locally to quickly archive your Clubhouse data
+to the current directory (where a `./data` directory will be created)...
+
+    $ export CLUBHOUSE_API_TOKEN=00000000
+    $ docker run \
+        -v ${PWD}:/export \
+        -e CLUBHOUSE_API_TOKEN=${CLUBHOUSE_API_TOKEN} \
+        --rm informaticsmatters/clubhouse-exporter:latest
 
 Or you can deploy it to Kubernetes as a CronJob for regular execution.
 Where you can checkout our peer [Ansible] repository.

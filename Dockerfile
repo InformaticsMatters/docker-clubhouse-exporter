@@ -25,7 +25,9 @@ COPY docker-entrypoint.sh ./
 COPY exporter/*.sh ./
 RUN /usr/local/bin/python -m pip install --upgrade pip && \
     pip install awscli==1.18.108 && \
-    apk --no-cache add curl && \
+    apk --no-cache add \
+        curl \
+        jq && \
     chmod -R 755 *.sh 2>/dev/null || true && \
     chmod -R 755 *.py 2>/dev/null || true && \
     chown exporter.exporter ${EXPORT_ROOT}
@@ -33,4 +35,4 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && \
 USER exporter
 ENV HOME ${APP_ROOT}
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+CMD ["./docker-entrypoint.sh"]
