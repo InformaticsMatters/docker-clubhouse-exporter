@@ -20,6 +20,7 @@ fi
 echo "+> Exporting to ${EXPORT_ROOT}..."
 cd "${EXPORT_ROOT}"
 "${APP_ROOT}"/exporter.sh
+"${APP_ROOT}"/get-all-stories.sh
 ls -l ./data
 echo "+> Exported."
 
