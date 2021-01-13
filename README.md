@@ -1,6 +1,10 @@
 # A container image to Export Clubhouse data
 
-[![Build Status](https://travis-ci.com/InformaticsMatters/docker-clubhouse-exporter.svg?branch=master)](https://travis-ci.com/InformaticsMatters/docker-clubhouse-exporter)
+![build](https://github.com/InformaticsMatters/docker-clubhouse-exporter/workflows/build/badge.svg)
+![build latest](https://github.com/InformaticsMatters/docker-clubhouse-exporter/workflows/build%20latest/badge.svg)
+![build tag](https://github.com/InformaticsMatters/docker-clubhouse-exporter/workflows/build%20tag/badge.svg)
+![build stable](https://github.com/InformaticsMatters/docker-clubhouse-exporter/workflows/build%20stable/badge.svg)
+
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/informaticsmatters/docker-clubhouse-exporter)
 
 An image that uses the [Clubhouse] [exporter] (copied to this repo) to extract
